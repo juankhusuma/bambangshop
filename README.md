@@ -1,7 +1,7 @@
 # BambangShop Publisher App
 Tutorial and Example for Advanced Programming 2024 - Faculty of Computer Science, Universitas Indonesia
 
----
+----
 
 ## About this Project
 In this repository, we have provided you a REST (REpresentational State Transfer) API project using Rocket web framework.
