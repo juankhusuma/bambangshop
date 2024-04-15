@@ -5,8 +5,6 @@ use crate::model::subscriber::Subscriber;
 use crate::service::notification::NotificationService;
 use bambangshop::Result;
 
-use super::product;
-
 #[post("/subscribe/<product_type>", data = "<subscriber>")]
 pub fn subscribe(
     product_type: &str,

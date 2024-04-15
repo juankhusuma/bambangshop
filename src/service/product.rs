@@ -3,9 +3,8 @@ use rocket::serde::json::Json;
 
 use crate::model::product::Product;
 use crate::repository::product::ProductRepository;
+use crate::service::notification::NotificationService;
 use bambangshop::{compose_error_response, Result};
-
-use super::notification::NotificationService;
 
 pub struct ProductService;
 
@@ -13,6 +12,12 @@ impl ProductService {
     pub fn create(mut product: Product) -> Result<Product> {
         product.product_type = product.product_type.to_uppercase();
         let product_result: Product = ProductRepository::add(product);
+
+        NotificationService.notify(
+            &product_result.product_type,
+            "CREATED",
+            product_result.clone(),
+        );
 
         return Ok(product_result);
     }
@@ -42,6 +47,7 @@ impl ProductService {
         }
         let product: Product = product_opt.unwrap();
 
+        NotificationService.notify(&product.product_type, "DELETED", product.clone());
         return Ok(Json::from(product));
     }
 
