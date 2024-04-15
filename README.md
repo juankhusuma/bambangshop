@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement delete function in Subscriber repository.`
     -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -87,5 +87,13 @@ This is the place for you to write reflections:
 > The Singleton pattern is a design pattern that ensures that a class has only one instance and provides a global point of access to that instance. They lazy_static macro handles that for us, so we don't need to implement the Singleton pattern ourselves. Although the Singleton pattern allows for a safe access to the HashMap data, it does not prevent other issues that may arise from concurrent access to the HashMap. The DashMap library provides a safe concurrent access to the HashMap, which is necessary in this case as we are dealing with a shared resource that may be accessed concurrently by multiple threads. So in this case, DashMap and the Singleton pattern goes hand in hand, as the Singleton pattern ensures that there is only one instance of the HashMap preventing constant cloning and initialization, while DashMap ensures that the HashMap is accessed concurrently in a safe manner, therefore in this case, one could not be replaced with another.
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+> The need to separate Service and Repository from a Model is to ensure that the codebase is in compliance with the Single Responsibility Principle (SRP) and the Separation of Concerns principle. The Model in MVC is meant as a data representastion on the database, The Repository is reponsible as a data access and modification layer, while the Service is responsible for the business logic. By separating the Service and Repository from the Model, we can ensure that each component has a single responsibility, and that the codebase is more modular and easier to maintain. This also allows for the codebase to be more extensible and scalable, as we can add new services and repositories without modifying the existing codebase. This separation of concerns also allows for the codebase to be more testable, as we can test each component in isolation. Therefore, the separation of Service and Repository from the Model is necessary to ensure that the codebase is in compliance with the SRP and the Separation of Concerns principle.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+> If we only use the Model, the codebase would be less modular and harder to maintain. The Model would have to handle both data storage and business logic, which would violate the Single Responsibility Principle (SRP) that could lead to an increase in code complexity and results in a very highly coupled code.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+> Postman is a very useful tool for testing web endpoints using HTTP requests. Postman allows us to test the endpoints of our web applications without having to write any code, which is very useful for quickly testing the functionality of our web applications. Some features that I really liked from Postman are the ability to save requests and responses, and the ease of controlling the request headers and body and managing cookies. This tool is very helpful for testing the endpoints of our web applications, and I will definitely use it in my future software engineering projects. You could also document your API using Postman, which is very useful for sharing the API documentation with other developers.
 
 #### Reflection Publisher-3
