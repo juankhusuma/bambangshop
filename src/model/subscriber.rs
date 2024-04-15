@@ -7,7 +7,7 @@ use rocket::serde::{json::to_string, Deserialize, Serialize};
 #[serde(crate = "rocket::serde")]
 pub struct Subscriber {
     pub url: String,
-    pub email: String,
+    pub name: String,
 }
 
 impl Subscriber {
